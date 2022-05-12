@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-v24/edittext_shape.xml" value="0.5675" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.5675" />
         <entry key="app/src/main/res/drawable/signin_shape.xml" value="0.5675" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.7005208333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4796195652173913" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.8" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.4796195652173913" />
