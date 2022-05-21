@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "880287399297",
+    "project_id": "stickerchat-320a3",
+    "storage_bucket": "stickerchat-320a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880287399297:android:04b614536801fb027f7c80",
+        "android_client_info": {
+          "package_name": "edu.neu.stickerchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880287399297-e5hae27odetu8thobr1tqmrsrcn8qa3l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAln8Rrn79SA7cjsSkzTYVDv5_w7-_5cQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880287399297-e5hae27odetu8thobr1tqmrsrcn8qa3l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

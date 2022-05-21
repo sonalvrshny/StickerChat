@@ -79,10 +79,9 @@ public class RegisterActivity extends AppCompatActivity {
                 username += "@gmail.com";
                 String usernameDB = username;
                 Log.d(TAG, username + " " + password);
-                DatabaseReference reference = database.getReference().child("user").child(Objects.requireNonNull(auth.getUid()));
-                Log.d(TAG, "task success " + reference);
                 auth.createUserWithEmailAndPassword(usernameDB, password).addOnCompleteListener(task ->  {
-                    Log.d(TAG, "task success " + task.isSuccessful());
+                    DatabaseReference reference = database.getReference().child("user").child(Objects.requireNonNull(auth.getUid()));
+                    Log.d(TAG, "task success " + reference);
                     if (task.isSuccessful()) {
                         Log.d(TAG, "Created an account with credentials");
                         Users user = new Users(auth.getUid(), usernameDB);
