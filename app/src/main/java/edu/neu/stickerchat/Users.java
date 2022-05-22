@@ -1,8 +1,8 @@
 package edu.neu.stickerchat;
 
 public class Users {
-    String uid;
-    String username;
+    private String uid;
+    private String username;
 
     public Users() {
     }
