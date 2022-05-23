@@ -16,8 +16,8 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
-    Context homeActivity;
-    List<Users> usersList;
+    private final Context homeActivity;
+    private final List<Users> usersList;
 
     public HomeAdapter(HomeActivity homeActivity, List<Users> usersList) {
         this.homeActivity = homeActivity;
