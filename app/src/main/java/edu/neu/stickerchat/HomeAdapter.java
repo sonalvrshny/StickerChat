@@ -2,6 +2,7 @@ package edu.neu.stickerchat;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +16,8 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
-    Context homeActivity;
-    List<Users> usersList;
+    private final Context homeActivity;
+    private final List<Users> usersList;
 
     public HomeAdapter(HomeActivity homeActivity, List<Users> usersList) {
         this.homeActivity = homeActivity;
@@ -38,9 +39,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         // TODO - putting user image
 
         holder.itemView.setOnClickListener(v -> {
+            Log.d("HomeAdapter", user.getUsername());
             Intent intent = new Intent(homeActivity, ChatActivity.class);
             intent.putExtra("name", user.getUsername());
             intent.putExtra("uid", user.getUid());
+            homeActivity.startActivity(intent);
         });
     }
 
