@@ -11,8 +11,10 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4796195652173913" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.8" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.4796195652173913" />
+        <entry key="app/src/main/res/layout/activity_sticker.xml" value="0.7005208333333334" />
         <entry key="app/src/main/res/layout/receiver_chat_card.xml" value="0.7005208333333334" />
         <entry key="app/src/main/res/layout/sender_chat_card.xml" value="0.7005208333333334" />
+        <entry key="app/src/main/res/layout/sticker_card.xml" value="0.7005208333333334" />
         <entry key="app/src/main/res/layout/user_home_card.xml" value="0.7005208333333334" />
       </map>
     </option>

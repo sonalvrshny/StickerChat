@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".StickerActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sticker_recycler"
+    <ImageView
+        android:id="@+id/sticker"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp" />
+        android:layout_height="match_parent">
+    </ImageView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
