@@ -2,6 +2,7 @@ package edu.neu.stickerchat;
 
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,7 @@ public class ChatAdapter extends RecyclerView.Adapter {
         if (holder.getClass() == SenderViewHolder.class) {
             SenderViewHolder senderViewHolder = (SenderViewHolder) holder;
             Uri uri = Uri.parse(message.getMessage());
+            Log.d("ChatAdapter", uri.toString());
             Picasso.get().load(uri).into(senderViewHolder.senderImage);
             Calendar c = Calendar.getInstance();
             c.setTimeInMillis(message.getTimestamp());

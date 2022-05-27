@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,7 +33,7 @@ public class StickerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sticker);
 
         String recID = getIntent().getStringExtra("recID");
-
+        Log.d("StickerAct", recID);
         stickerList = new ArrayList<>();
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();

@@ -78,7 +78,7 @@ public class ChatActivity extends AppCompatActivity {
 
         sendSticker.setOnClickListener(v -> {
             Intent intent = new Intent(ChatActivity.this, StickerActivity.class);
-            intent.putExtra("recId", receiverId);
+            intent.putExtra("recID", receiverId);
             startActivity(intent);
         });
     }

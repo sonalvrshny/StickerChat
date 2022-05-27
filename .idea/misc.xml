@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/edittext_shape.xml" value="0.5675" />
+        <entry key="app/src/main/res/drawable-v24/shape_item.xml" value="0.497" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.5675" />
         <entry key="app/src/main/res/drawable/signin_shape.xml" value="0.5675" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.7005208333333334" />
