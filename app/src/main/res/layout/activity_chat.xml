@@ -1,56 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChatActivity">
 
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/receiver_display"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="chatting with"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/MessageRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/receiver_display"
-        tools:layout_editor_absoluteX="1dp" />
+        android:layout_above="@id/enter_sticker_bottom_layout"
+        android:layout_below="@id/top_layout" />
 
-    <TextView
-        android:id="@+id/receiver_display"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="@dimen/_30sdp"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/enter_sticker_button"
+    <LinearLayout
+        android:id="@+id/enter_sticker_bottom_layout"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_25sdp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="@dimen/_540sdp"
-        app:cardElevation="@dimen/_6sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MessageRecyclerView"
-        app:layout_constraintVertical_bias="0.98">
+        android:layout_margin="@dimen/_5sdp"
+        android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:background="@color/primary"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:text="Click to send a sticker!"
-                    android:textSize="@dimen/_15sdp" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/enter_sticker_button"
+            android:layout_margin="@dimen/_3sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            app:cardCornerRadius="@dimen/_540sdp">
 
-    </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48sdp"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"
+                android:background="@color/primary"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="Click to send a sticker!"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</RelativeLayout>
