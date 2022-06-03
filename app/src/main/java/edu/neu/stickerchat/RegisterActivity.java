@@ -80,10 +80,9 @@ public class RegisterActivity extends AppCompatActivity {
                 String usernameDB = username;
                 Log.d(TAG, username + " " + password);
                 auth.createUserWithEmailAndPassword(usernameDB, password).addOnCompleteListener(task ->  {
-                    DatabaseReference reference = database.getReference().child("user").child(Objects.requireNonNull(auth.getUid()));
-                    Log.d(TAG, "task success " + reference);
                     if (task.isSuccessful()) {
                         Log.d(TAG, "Created an account with credentials");
+                        DatabaseReference reference = database.getReference().child("user").child(auth.getUid());
                         Users user = new Users(auth.getUid(), usernameDB);
                         reference.setValue(user).addOnCompleteListener(task1 -> {
                             if (task1.isSuccessful()) {
@@ -98,6 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
                         });
                     }
                     else {
+                        Log.d("Register", "User already exists");
                         Toast.makeText(RegisterActivity.this, "Account already exists", Toast.LENGTH_SHORT).show();
                     }
                 });

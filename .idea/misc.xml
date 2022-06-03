@@ -5,18 +5,22 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/edittext_shape.xml" value="0.5675" />
         <entry key="app/src/main/res/drawable-v24/shape_item.xml" value="0.497" />
+        <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.479" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.5675" />
         <entry key="app/src/main/res/drawable/signin_shape.xml" value="0.5675" />
+        <entry key="app/src/main/res/drawable/spinner_bg.xml" value="0.479" />
         <entry key="app/src/main/res/layout/activity_chat.xml" value="0.7005208333333334" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.7005208333333334" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.6547619047619048" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.4796195652173913" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.8" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.4796195652173913" />
         <entry key="app/src/main/res/layout/activity_sticker.xml" value="0.7005208333333334" />
         <entry key="app/src/main/res/layout/receiver_chat_card.xml" value="0.7005208333333334" />
         <entry key="app/src/main/res/layout/sender_chat_card.xml" value="0.7005208333333334" />
+        <entry key="app/src/main/res/layout/spinner.xml" value="0.4583333333333333" />
         <entry key="app/src/main/res/layout/sticker_card.xml" value="0.7005208333333334" />
         <entry key="app/src/main/res/layout/user_home_card.xml" value="0.7005208333333334" />
+        <entry key="app/src/main/res/menu/spinner_action_bar.xml" value="0.4583333333333333" />
       </map>
     </option>
   </component>
