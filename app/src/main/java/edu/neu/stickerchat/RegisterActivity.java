@@ -47,6 +47,14 @@ public class RegisterActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
+//        Log.d("SharedPref", SharedPrefUtils.getEmail(this) + "");
+//        if (SharedPrefUtils.getEmail(this) != null && !SharedPrefUtils.getEmail(this).equals("")) {
+//            Log.d("SharedPref", SharedPrefUtils.getEmail(this));
+//            Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+//            intent.putExtra("user", SharedPrefUtils.getEmail(this));
+//            startActivity(intent);
+//        }
+
         // clicking on sign up
         signup_button.setOnClickListener(v -> {
             progressBar.setVisibility(View.VISIBLE);
@@ -81,11 +89,14 @@ public class RegisterActivity extends AppCompatActivity {
                 Log.d(TAG, username + " " + password);
                 auth.createUserWithEmailAndPassword(usernameDB, password).addOnCompleteListener(task ->  {
                     if (task.isSuccessful()) {
+//                        SharedPrefUtils.saveEmail(usernameDB, this);
+//                        SharedPrefUtils.savePassword(password, this);
                         Log.d(TAG, "Created an account with credentials");
                         DatabaseReference reference = database.getReference().child("user").child(auth.getUid());
                         Users user = new Users(auth.getUid(), usernameDB);
                         reference.setValue(user).addOnCompleteListener(task1 -> {
                             if (task1.isSuccessful()) {
+
                                 Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
                                 intent.putExtra("user", usernameDB);
                                 startActivity(intent);

@@ -36,24 +36,25 @@ public class HomeActivity extends AppCompatActivity {
     private void logOut() {
         DatabaseReference reference = db.getReference().child("user");
         DatabaseReference user = reference.child(auth.getUid());
-        user.child("notificationToken").setValue(null);
+        SharedPrefUtils.saveEmail(null, this);
+        SharedPrefUtils.savePassword(null, this);
         auth.signOut();
         this.finish();
     }
 
-    @Override
-    public void onBackPressed() {
-        if (backPressed) {
-//            logOut();
-            super.onBackPressed();
-        } else {
-            Toast.makeText(this, "Press back again to exit", Toast.LENGTH_LONG).show();
-            backPressed = true;
-            new Handler().postDelayed(() -> {
-                backPressed = false;
-            }, 1500);
-        }
-    }
+//    @Override
+//    public void onBackPressed() {
+//        if (backPressed) {
+////            logOut();
+//            super.onBackPressed();
+//        } else {
+//            Toast.makeText(this, "Press back again to exit", Toast.LENGTH_LONG).show();
+//            backPressed = true;
+//            new Handler().postDelayed(() -> {
+//                backPressed = false;
+//            }, 1500);
+//        }
+//    }
 
 
     @Override

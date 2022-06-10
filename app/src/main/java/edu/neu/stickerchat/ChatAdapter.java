@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter {
     private Context context;
-    List<Messages> messagesList;
+    private List<Messages> messagesList;
     private static final int SEND = 1;
     private static final int RECEIVE = 2;
 
