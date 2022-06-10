@@ -47,12 +47,13 @@ public class LoginActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
         Log.d("SharedPref", SharedPrefUtils.getEmail(this) + "");
-//        if (SharedPrefUtils.getEmail(this) != null && !SharedPrefUtils.getEmail(this).equals("")) {
-//            Log.d("SharedPref", SharedPrefUtils.getEmail(this));
-//            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            startActivity(intent);
-//        }
+        if (SharedPrefUtils.getEmail(this) != null && !SharedPrefUtils.getEmail(this).equals("")) {
+            Log.d("SharedPref", SharedPrefUtils.getEmail(this));
+            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            intent.putExtra("user", SharedPrefUtils.getEmail(this));
+            startActivity(intent);
+            LoginActivity.this.finish();
+        }
 
         // clicking on sign in
         signin_button.setOnClickListener(v -> {
@@ -78,17 +79,18 @@ public class LoginActivity extends AppCompatActivity {
                 String finalUsername = username;
                 auth.signInWithEmailAndPassword(username, password).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
+                        SharedPrefUtils.saveEmail(finalUsername, this);
+                        SharedPrefUtils.savePassword(password, this);
                         DatabaseReference reference = database.getReference().child("user").child(auth.getUid());
                         Users users = new Users(auth.getUid(), finalUsername);
                         reference.setValue(users).addOnCompleteListener(task1 -> {
                             if (task1.isSuccessful()) {
-                                SharedPrefUtils.saveEmail(finalUsername, this);
-                                SharedPrefUtils.savePassword(password, this);
                                 progressBar.setVisibility(View.INVISIBLE);
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 intent.putExtra("user", finalUsername);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_LONG).show();
+                                LoginActivity.this.finish();
                             }
                             else {
                                 progressBar.setVisibility(View.INVISIBLE);
